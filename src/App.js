@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import pexelsApi from './api/pexelsApi'
+import header from './images/header.png'
 import './App.css'
 
 
@@ -74,7 +75,10 @@ const App = () => {
 
   return (
     <>
-      <h1>Pexels Gallary</h1>
+      <div className='navtop'>
+        <img className='nav' src={header} alt="icon" />
+      </div>
+
       <div className='bar'>
         <form type='submit' onSubmit={search} >
           <input className='input' type='text' require='required' placeholder='Search Images' onChange={(event) => setQuery(event.target.value)} />
@@ -86,8 +90,8 @@ const App = () => {
         {images.map((image) => <div className='container'><img key={image.id} src={image.src.original} alt={image.alt} /><p key={image.photographer.id} >Photographer: {image.photographer}</p></div>)}
       </div>
 
-      <div className='load'>
-        {nextPage && <button onClick={handleLoadMoreClick}>Load More Photos</button>}
+      <div>
+        {nextPage && <button className='load' onClick={handleLoadMoreClick}>Load More Photos</button>}
       </div>
     </>
   )

@@ -1,6 +1,17 @@
-h1{
-  text-align: center;
-  font-size: 58px;
+*{
+  margin: 0;
+  padding:0;
+}
+
+.navtop{
+  border-radius: 15px;
+  margin: 50px;
+  height: 450px;
+}
+
+.nav{
+  border-radius: 15px;
+  object-fit: fill;
 }
 
 form{
@@ -23,7 +34,7 @@ form{
   font-size: 26px;
   width: 70%;
   margin-right: 20px;
-  margin-left: 50px;
+  margin-left: 75px;
 }
 
 .search {
@@ -47,6 +58,8 @@ form{
   border-radius: 15px;
   text-align: center;
   padding: 14px;
+  background-color:	rgb(41, 43, 44);
+  
 }
 
 .image-grid{
@@ -72,16 +85,27 @@ img:hover{
 }
 
 p{
-  -webkit-transition: all 350ms ease;
-  transition: all 350ms ease;
+
   cursor: pointer;
   margin-bottom: 12px;
   width: 100%;
   height: 100%;
-  border: 3px solid rgb(100,100,100);
+  border: 3px solid rgb(92, 184, 92);
   border-radius: 15px;
   text-align: center;
   padding: 14px;
+  background-color: rgb(92, 184, 92);
+  font-size: 24px;
 }
 
+.load {
+  border: 3px solid	rgb(217, 83, 79);
+  border-radius: 15px;
+  font-size: 26px;
+  padding: 10px;
+  width: 20%;
+  background-color: rgb(217, 83, 79);
+  color: white;
+  margin: 40px 800px;
+}
 
