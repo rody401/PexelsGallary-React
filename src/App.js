@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import pexelsApi from './api/pexelsApi'
 import header from './images/header.png'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Button } from 'react-bootstrap'
 
 
 const App = () => {
@@ -10,7 +12,6 @@ const App = () => {
   const [nextPage, setNextPage] = useState(1);
   const [perPage, setPerPage] = useState(25);
   const [query, setQuery] = useState('');
-  const [error, setError] = useState('');
 
 
   // Helper functions
@@ -87,11 +88,17 @@ const App = () => {
       </div>
 
       <div className='image-grid'>
-        {images.map((image) => <div className='container'><img key={image.id} src={image.src.original} alt={image.alt} /><p key={image.photographer.id} >Photographer: {image.photographer}</p></div>)}
+        {images.map((image) => <Card className='img-box' style={{ width: '18rem' }}>
+          <Card.Img variant="top" className='img' key={image.id} src={image.src.original} />
+          <Card.Body className='card'>
+            <Card.Title className='alt'>{image.alt}</Card.Title>
+            <Button className='author-button' key={image.photographer_id} href={image.photographer_url} variant="primary">{image.photographer}</Button>
+          </Card.Body>
+        </Card>)}
       </div>
 
       <div>
-        {nextPage && <button className='load' onClick={handleLoadMoreClick}>Load More Photos</button>}
+        {nextPage && <Button variant="danger" className='load' onClick={handleLoadMoreClick}>Load More Photos</Button>}
       </div>
     </>
   )
