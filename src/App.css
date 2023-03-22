@@ -4,15 +4,14 @@
 }
 
 .navtop{
-  border-radius: 15px;
-  margin-top: 50px;
-  margin-left: 23%;
-  height: 450px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav{
   border-radius: 15px;
   object-fit: fill;
+  width: 50%;
 }
 
 form{
@@ -24,6 +23,7 @@ form{
   width:575px;
   border-radius:30px;
   border:1px solid #dcdcdc;
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
